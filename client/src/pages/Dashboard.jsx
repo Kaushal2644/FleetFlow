@@ -60,21 +60,21 @@ export default function Dashboard() {
               <h3 className="text-green-600 text-xl font-semibold">
                 Active Fleet
               </h3>
-              <p className="text-3xl font-bold mt-2">220</p>
+              <p className="text-3xl font-bold mt-2">0</p>
             </div>
 
             <div className="bg-white rounded-2xl shadow p-6 text-center">
               <h3 className="text-green-600 text-xl font-semibold">
                 Maintenance Alert
               </h3>
-              <p className="text-3xl font-bold mt-2">180</p>
+              <p className="text-3xl font-bold mt-2">0</p>
             </div>
 
             <div className="bg-white rounded-2xl shadow p-6 text-center">
               <h3 className="text-green-600 text-xl font-semibold">
                 Pending Cargo
               </h3>
-              <p className="text-3xl font-bold mt-2">20</p>
+              <p className="text-3xl font-bold mt-2">0</p>
             </div>
           </div>
 

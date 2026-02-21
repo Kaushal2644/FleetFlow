@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 const Login = () => {
+  const navigate = useNavigate();
 
   const [role, setRole] = useState("Manager");
 
@@ -24,6 +25,9 @@ const Login = () => {
 
       localStorage.setItem("token", res.data.token);
       alert("Login Successful 🚀");
+
+      // REDIRECT TO DASHBOARD
+      navigate("/dashboard");
 
     } catch (err) {
       alert("Invalid Credentials ❌");
@@ -50,7 +54,6 @@ const Login = () => {
 
       {/* RIGHT PANEL */}
       <div className="flex-1 bg-gray-50 flex justify-center items-center">
-
         <div className="w-[420px]">
           <h2 className="text-4xl font-bold mb-2">Sign in to FleetFlow</h2>
           <p className="text-gray-500 mb-6">
@@ -59,7 +62,6 @@ const Login = () => {
 
           {/* ROLE TABS */}
           <div className="flex bg-gray-200 rounded-lg p-1 mb-5">
-
             <button
               onClick={() => setRole("Manager")}
               className={`flex-1 py-2 rounded-md font-semibold ${
@@ -108,7 +110,6 @@ const Login = () => {
             </Link>
           </p>
         </div>
-
       </div>
     </div>
   );

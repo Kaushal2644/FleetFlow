@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
 
 const Register = () => {
+  const navigate = useNavigate();
 
   const [role, setRole] = useState("Manager");
 
@@ -18,13 +19,15 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-
       await API.post("/auth/register", {
         ...form,
         role,
       });
 
       alert("Register Successful ✅");
+
+      // REDIRECT TO DASHBOARD
+      navigate("/dashboard");
 
     } catch (err) {
       alert("Register Failed ❌");
@@ -37,7 +40,6 @@ const Register = () => {
       {/* LEFT */}
       <div className="flex-1 bg-gradient-to-br from-sky-800 to-sky-600 text-white flex flex-col justify-center px-14">
         <h2 className="text-3xl font-bold mb-10">🚚 FleetFlow</h2>
-
         <h1 className="text-6xl font-bold leading-tight">
           Join FleetFlow
         </h1>
@@ -45,7 +47,6 @@ const Register = () => {
 
       {/* RIGHT */}
       <div className="flex-1 bg-gray-50 flex justify-center items-center">
-
         <div className="w-[420px]">
 
           <h2 className="text-4xl font-bold mb-2">Create Account</h2>
